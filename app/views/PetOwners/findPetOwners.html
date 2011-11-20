@@ -1,0 +1,12 @@
+#{extends 'main.html'/}
+#{set title:'Find' /}
+<h1>&{'find.petOwners'}</h1>
+#{form @listPetOwners()}
+<div class="row">
+    #{trInput value:search, fieldName:'search', messageKey:'search.lastname' /}
+</div>
+<div class="actions">
+    <input type="submit" value="&{'search'}" class="btn primary"/>
+    #{a @addPetOwner(), class:'btn'}&{'add.petowner'}#{/a}
+</div>
+#{/form}

@@ -1,7 +1,45 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
-book.name=Name
-book.isbn=ISBN
-book.author=Author
-book.publishedAt=Published at
+vets=Display all vets
+vets.title=Vetenerians
+home=Home
+find.petOwners=Find Pet owners
+search=Search
+search.lastname=Search on lastname
+lastname=Last name
+title.petOwners=Owners
+general.name=Name
+petOwner.firstName=First name
+petOwner.lastName=Last name
+petOwner.address=Address
+petOwner.city=City
+petOwner.telephone=Phone
+petOwner.pets=Pets
+header.specialities=Specialities
+title.showPetOwner=Owner information
+title.editPetOwner=Edit Pet owner information
+title.editPet=Edit Pet
+title.addPet=Add Pet
+add.petowner=Add Pet owner
+edit.owner=Edit owner
+add.pet=Add pet
+pet.birthDate=Birthdate
+person.not.unique=A person with this first name and last name already exists
+pet.name=Name
+pet.type=Pet type
+petOwner.visits=Visits
+visit.pet.name=Pet name
+visit.date=Visit date
+visit.description=Description
+error.nothing.found=Nothing was found. Try adding a wildcard (*)
+visit.add=Add visit
+visits.for=Visits for
+
+visit.date.must.be.in.past=The visit date must be in the past
+home.pagename=Overview of application
+menu.home.title=Home
+pet.saved=The pet data was saved
+showPetOwner.title=Pet Owner %s
+title.addPetOwner=Add a new pet owner
+pet.deleted=So sorry to hear that your pet has died :(

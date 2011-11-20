@@ -1,0 +1,233 @@
+
+Speciality(spec_1):
+ name: radiology
+
+Speciality(spec_2):
+ name: surgery
+
+Speciality(spec_3):
+ name: dentistry
+
+Vet(vet_1):
+ firstName: James
+ lastName: Carter
+
+Vet(vet_2):
+ firstName: Helen
+ lastName: Leary
+ specialities: [spec_1]
+
+Vet(vet_3):
+ firstName: Linda
+ lastName: Douglas
+ specialities: [spec_2, spec_3]
+
+Vet(vet_4):
+ firstName: Rafael
+ lastName: Ortega
+ specialities: [spec_2]
+
+Vet(vet_5):
+ firstName: Henry
+ lastName: Stevens
+ specialities: [spec_1]
+
+Vet(vet_6):
+ firstName: Sharon
+ lastName: Jenkins
+
+PetType(type_1):
+ name: cat
+
+PetType(type_2):
+ name: dog
+
+PetType(type_3):
+ name: lizard
+
+PetType(type_4):
+ name: snake
+
+PetType(type_5):
+ name: bird
+
+PetType(type_6):
+ name: hamster
+
+PetOwner(owner_1):
+ firstName: George
+ lastName: Franklin
+ address: 110 W. Liberty St.
+ city: Madison
+ telephone: 6085551023
+ pets: [pet_1]
+
+PetOwner(owner_2):
+ firstName: Betty
+ lastName: Davis
+ address: 638 Cardinal Ave.
+ city: Sun Prairie
+ telephone: 6085551749
+ pets: [pet_1]
+
+PetOwner(owner_3):
+ firstName: Eduardo
+ lastName: Rodriquez
+ address: 2693 Commerce St.
+ city: McFarland
+ telephone: 6085558763
+ pets: [pet_1]
+
+PetOwner(owner_4):
+ firstName: Harold
+ lastName: Davis
+ address: 563 Friendly St.
+ city: Windsor
+ telephone: 6085553198
+ pets: [pet_1]
+
+PetOwner(owner_5):
+ firstName: Peter
+ lastName: McTavish
+ address: 2387 S. Fair Way
+ city: Madison
+ telephone: 6085552765
+ pets: [pet_1]
+
+PetOwner(owner_6):
+ firstName: Jean
+ lastName: Coleman
+ address: 105 N. Lake St.
+ city: Monona
+ telephone: 6085552654
+ pets: [pet_1]
+
+PetOwner(owner_7):
+ firstName: Jeff
+ lastName: Black
+ address: 1450 Oak Blvd.
+ city: Monona
+ telephone: 6085555387
+ pets: [pet_1]
+
+PetOwner(owner_8):
+ firstName: Maria
+ lastName: Escobito
+ address: 345 Maple St.
+ city: Madison
+ telephone: 6085557683
+ pets: [pet_1]
+
+PetOwner(owner_9):
+ firstName: David
+ lastName: Schroeder
+ address: 2749 Blackhawk Trail
+ city: Madison
+ telephone: 6085559435
+ pets: [pet_1]
+
+PetOwner(owner_10):
+ firstName: Carlos
+ lastName: Estaban
+ address: 2335 Independence La.
+ city: Waunakee
+ telephone: 6085555487
+ pets: [pet_1]
+
+Pet(pet_1):
+ name: Leo
+ birthDate: 2000-09-07
+ petOwner: owner_1
+ type: type_1
+
+Pet(pet_2):
+ name: Basil
+ birthDate: 2002-08-06
+ type: type_6
+ petOwner: owner_2
+
+Pet(pet_3):
+ name: Rosy
+ birthDate: 2001-04-17
+ type: type_2
+ petOwner: owner_3
+
+Pet(pet_4):
+ name: Jewel
+ birthDate: 2000-03-07
+ type: type_2
+ petOwner: owner_3
+
+Pet(pet_5):
+ name: Iggy
+ birthDate: 2000-11-30
+ type: type_3
+ petOwner: owner_4
+
+Pet(pet_6):
+ name: George
+ birthDate: 2000-01-20
+ type: type_4
+ petOwner: owner_5
+
+Pet(pet_7):
+ name: Samantha
+ birthDate: 1995-09-04
+ type: type_1
+ petOwner: owner_6
+
+Pet(pet_8):
+ name: Max
+ birthDate: 1995-09-04
+ type: type_1
+ petOwner: owner_6
+
+Pet(pet_9):
+ name: Lucky
+ birthDate: 1999-08-06
+ type: type_5
+ petOwner: owner_7
+
+Pet(pet_10):
+ name: Mulligan
+ birthDate: 1997-02-24
+ type: type_2
+ petOwner: owner_8
+
+Pet(pet_10):
+ name: Freddy
+ birthDate: 2000-03-09
+ type: type_5
+ petOwner: owner_9
+
+Pet(pet_10):
+ name: Lucky
+ birthDate: 2000-06-24
+ type: type_2
+ petOwner: owner_10
+
+Pet(pet_10):
+ name: Sly
+ birthDate: 2002-06-08
+ type: type_1
+ petOwner: owner_10
+
+Visit(visit_1):
+  pet: pet_7
+  date: 1996-03-04
+  description: rabies shot
+
+Visit(visit_2):
+  pet: pet_8
+  date: 1996-03-04
+  description: rabies shot
+
+Visit(visit_3):
+  pet: pet_8
+  date: 1996-06-04
+  description: neutered
+
+Visit(visit_4):
+  pet: pet_7
+  date: 1996-09-04
+  description: spayed

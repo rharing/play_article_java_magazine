@@ -1,0 +1,29 @@
+#{extends 'main.html'/}
+<h1>#{if pet.id != null}&{'title.editPet'}#{/if}#{else}&{'title.addPet'}#{/else}</h1>
+#{form @savePet()}
+<input type="hidden" name="pet.petOwner.id" value="${pet.petOwner.id}"/>
+<input type="hidden" name="pet.id" value="${pet.id}"/>
+#{trInput value:pet.name, fieldName:'pet.name'/}
+#{trInput value:pet.birthDate?.format(dateFormat), fieldName:'pet.birthDate', explanation:'(' + dateFormat + ')'/}
+
+<div class="clearfix">
+    <label for="pet_type_id">&{'pet.type'}</label>
+
+    <div class="input">
+        <select id="pet_type_id" name="pet.type.id">
+            #{list items:petTypes, as:'petType'}
+            <option value=${petType.id} #{if petType.id.addSlashes() == pet.type?.id?.addSlashes()}selected#{/if}>${petType.name}</option>
+            #{/list}
+        </select>
+    </div>
+</div>
+
+<div class="actions">
+    <input type="submit" name="save" value="&{'save'}" class="btn primary"/>
+    #{set deleteClass:'btn danger'/}
+    #{if pet.id == null}
+        #{set deleteClass:'btn danger disabled'/}
+    #{/if}
+    #{a @delete(pet.id), class:deleteClass}&{'delete'}#{/a}
+</div>
+#{/form}

@@ -1,0 +1,13 @@
+#{extends 'main.html'/}
+<h1>#{if petOwner.id != null}&{'title.editPetOwner'}#{/if}#{else}&{'title.addPetOwner'}#{/else}</h1>
+#{form @savePetOwner()}
+        <input type="hidden" name="petOwner.id" value="${petOwner.id}"/>
+<table>
+    #{trInput value:petOwner.firstName, fieldName:'petOwner.firstName'/}
+    #{trInput value:petOwner.lastName, fieldName:'petOwner.lastName'/}
+    #{trInput value:petOwner.address, fieldName:'petOwner.address'/}
+    #{trInput value:petOwner.city, fieldName:'petOwner.city'/}
+    #{trInput value:petOwner.telephone, fieldName:'petOwner.telephone'/}
+    <tr><td colspan="2"><input type="submit" name="save" value="&{'save'}" class="btn primary"/></td></tr>
+</table>
+#{/form}

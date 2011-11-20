@@ -1,0 +1,38 @@
+#{if _type == null}
+        #{set _type:"text"/}
+#{/if}
+#{if _size == null}
+        #{set _size:"30"/}
+#{/if}
+#{set messageKey:_fieldName/}
+#{if _messageKey != null}
+        #{set messageKey:_messageKey/}
+#{/if}
+#{if _rows == null}
+        #{set _rows:"6"/}
+#{/if}
+#{if _cols == null}
+        #{set _cols:"40"/}
+#{/if}
+
+#{field _fieldName}
+#{set divClass:'clearfix'/}
+#{ifError field.name}
+        #{set divClass:'clearfix error'/}
+#{/ifError}
+<div class="${divClass}">
+    <label for="${field.id}">&{messageKey}</label>
+    <div class="input">
+        #{if _type == 'textarea'}
+            <textarea rows="${_rows}" cols="${_cols}" name="${field.name}" id="${field.id}">${_value?.raw()}</textarea>
+        #{/if}
+        #{else}
+            <input id="${field.id}" class="${field.errorClass}" type="text" name="${field.name}" value="${flash[field.name]?.escape()?.raw() ?: field.error?.message == 'validation.required' ? '' : _value?.escape()?.raw()}" size="${_size}" />
+        #{/else}
+        #{if _explanation != null}${_explanation}#{/if}
+        #{ifError field.name}
+            <span class="error">${field.error.raw()}</span>
+        #{/ifError}
+    </div>
+</div>
+#{/field}

@@ -1,4 +1,39 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:messages.get('menu.home.title') /}
+#{set pageName:messages.get('home.pagename')/}
 
-#{welcome /}
+
+<h2>Explanation</h2>
+<p>
+    You are looking at the petclinic, the sample application that was introduced by spring, but now build using the
+    playframework.
+</p>
+<p>
+    Since you are seeing this page, the appliation has started successfully.</p>
+<p>
+    The vets link will take you to the crud section of the vets. This crud screen is the default crud system that comes
+    with the playframework. Since we don't want everybody to see the vets section, it is also protected by a login page.
+    This is handled by the secure module of the playframework and is also already available.</p>
+<p>To enable the crud and security module, stop the play server and run "play deps". Then restart the play server and
+    all should be well
+</p>
+<p>
+    When asked for login to see the vets, use login: admin password: admin
+</p>
+<p>
+    When searching for petOwners, here are the known owners:
+<table>
+    <thead>
+    <th>&{'petOwner.firstName'}</th>
+    <th>&{'petOwner.lastName'}</th>
+    </thead>
+    <tbody>
+    #{list items:petOwners, as:'petOwner'}
+    <tr>
+        <td>${petOwner.firstName}</td>
+        <td>${petOwner.lastName}</td>
+    </tr>
+    #{/list}
+    </tbody>
+</table>
+</p>

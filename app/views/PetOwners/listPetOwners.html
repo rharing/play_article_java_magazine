@@ -1,0 +1,25 @@
+#{extends 'main.html'/}
+        <h1>&{'title.petOwners'}</h1>
+<table>
+    <thead>
+    <th>&{'general.name'}</th>
+    <th>&{'petOwner.address'}</th>
+    <th>&{'petOwner.city'}</th>
+    <th>&{'petOwner.telephone'}</th>
+    <th>&{'petOwner.pets'}</th>
+    </thead>
+    <tbody>
+    #{list items:petOwners, as:'petOwner'}
+    <tr>
+        <td>#{a @showPetOwner(petOwner.id)}${petOwner.firstName} ${petOwner.lastName}#{/a}</td>
+        <td>${petOwner.address}</td>
+        <td>${petOwner.city}</td>
+        <td>${petOwner.telephone}</td>
+        <td>#{list items:petOwner.pets, as:'pet'}
+            ${pet.name}#{ifnot pet_isLast}, #{/ifnot}
+            #{/list}
+        </td>
+    </tr>
+    #{/list}
+    </tbody>
+</table>

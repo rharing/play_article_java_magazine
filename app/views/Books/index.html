@@ -1,7 +1,0 @@
-#{extends 'main.html' /}
-<ul>
-#{list items:books, as:'book'}
-  <li>#{a @Books.show(book.id)}${book.name}#{/a}
-#{/list}
-</ul>
-#{a @Books.add()}Add#{/a}

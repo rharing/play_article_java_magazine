@@ -1,0 +1,10 @@
+#{set menuStyle:''/}
+#{set href:'#'/}
+#{list items:['Home', 'Vets', 'Find'], as:'menu'}
+        #{if title == menu}
+            <li class="active"><a href="#">${menu}</a></li>
+        #{/if}
+        #{else}
+            <li><a href ="/${menu}">${menu}</a></li>
+        #{/else}
+#{/list}

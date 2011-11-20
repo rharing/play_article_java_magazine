@@ -3,14 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                   Books.index
-GET     /add                Books.add
-GET     /show/{<[0-9]+>id}  Books.show
-POST    /save/{<[0-9]+>id}  Books.save
-GET     /edit/{<[0-9]+>id}  Books.edit
+GET     /                                       Application.index
+GET     /Home                                       Application.index
+GET     /Vets                                   Vets.list
+GET     /Find                                   PetOwners.findPetOwners
+GET     /petowners/search                           PetOwners.searchPetOwners
+GET     /petowners/add                           PetOwners.addPetOwner
+GET     /petowners/find                             PetOwners.findPetOwners
+GET     /petowners/show/{<[0-9]+>id}                      PetOwners.showPetOwner
+GET     /petowners/edit/{<[0-9]+>id}                      PetOwners.editPetOwner
+GET     /petowners/{<[0-9]+>id}/addPet                    Pets.addPet
+GET     /petowners/editPet/{<[0-9]+>id}                    Pets.editPet
+GET     /pet/{<[0-9]+>id}/addVisit                      Visits.addVisit
+GET     /pet/delete/{<[0-9]+>id}                      Pets.delete
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
+
+*      /admin           module:crud
+*      /                module:secure
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

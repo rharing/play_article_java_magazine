@@ -1,0 +1,12 @@
+#{if session.username}
+#{form @Secure.logout(), class:"pull-right"}
+Hello admin  <button class="btn" type="submit">Logout</button>
+#{/form}
+#{/if}
+#{else}
+#{form @Secure.login(), class:"pull-right", method:"post"}
+  <input class="input-small" type="text" placeholder="Username" name="username">
+  <input class="input-small" type="password" placeholder="Password" name="password">
+  <button class="btn" type="submit">Sign in</button>
+#{/form}
+#{/else}

@@ -1,0 +1,88 @@
+#{extends 'main.html'/}
+#{set title:messages.get('showPetOwner.title', petOwner)/}
+#{set 'moreScripts'}
+<script src="@{'/public/javascripts/jquery.ui.widget.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/jquery.ui.button.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/jquery.ui.core.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/jquery.ui.position.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/jquery.ui.dialog.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/javascripts/jquery.dataTables.js'}" type="text/javascript"></script>
+#{/set}
+<h1>&{'title.showPetOwner'}</h1>
+#{if flash['message']}
+<div class="alert-message warning">
+    &{flash['message']}
+</div>
+#{/if}
+<table>
+    #{tr petOwner.firstName + " " + petOwner.lastName, fieldName:'general.name'/}
+    #{tr petOwner.address, fieldName:'petOwner.address'/}
+    #{tr petOwner.city, fieldName:'petOwner.city'/}
+    #{tr petOwner.telephone, fieldName:'petOwner.telephone'/}
+    <tr><td colspan="2">#{a @editPetOwner(petOwner.id), class:'btn primary'}&{'edit.owner'}#{/a}</td></tr>
+</table>
+
+<h2>&{'petOwner.pets'}</h2>
+<table>
+    <thead>
+    <th>&{'general.name'}</th>
+    <th>&{'pet.birthDate'}</th>
+    <th>&{'pet.type'}</th>
+    <th>&{'petOwner.visits'}</th>
+    </thead>
+    <tbody>
+    #{list items:petOwner.pets, as:'pet'}
+    <tr>
+        <td>#{a @Pets.editPet(pet.id)}${pet.name}#{/a}</td>
+        <td>${pet.birthDate.format(dateFormat)}</td>
+        <td>${pet.type.name}</td>
+        <td>
+            <table>
+                #{list items:pet.visits, as:'visit'}
+                <tr>
+                    <td>${visit.date.format(dateFormat)}</td>
+                    <td>${visit.description}</td>
+                </tr>
+                #{/list}
+                <tr>
+                    #{set 'petVisitTitle'}&{'visits.for'} ${pet.name}#{/set}
+                    <td colspan="2">#{a @Visits.addVisit(pet.id), class:'show-dialog btn', title:petVisitTitle}&{'visit.add'}#{/a}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    #{/list}
+    <tr>
+        <td colspan="4">
+            #{a @Pets.addPet(petOwner.id), class:'btn primary'}&{'add.pet'}#{/a}
+        </td>
+    </tr>
+    </tbody>
+</table>
+#{set 'bottomScripts'}
+<script type="text/javascript">
+    $(function() {
+
+        $(".show-dialog").each(function() {
+            var $dialog = $('<div id="container"></div>');
+            var $link = $(this).click(function() {
+                $dialog.load($link.attr('href'))
+                        .dialog({
+                            title:$link.attr('title'),
+                            width:550,
+                            height:300,
+                            modal:true
+                        });
+
+                $link.click(function() {
+                    $dialog.dialog('open');
+                    return false;
+                });
+
+                return false;
+            });
+        });
+    });
+</script>
+#{/set}
