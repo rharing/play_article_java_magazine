@@ -1,7 +1,11 @@
 This is the source code to accompany the playframework article in Java Magazine.
 
 After checkout, the simple book application is the master. If you would like to see a more
-sophistacted example of the book application with the playframework you have to do a checkout of advanced, so:
+sophistacted example of the playframework, do a checkout of the branch called petclinic. This will give you a 
+playframework implementation of spring's petclinic example. To run the petclinic first do:
+play clean
+play deps
 
-git checkout advanced
+then start play again by running:
+play run
 
