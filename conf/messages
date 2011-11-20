@@ -1,0 +1,7 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+book.name=Name
+book.isbn=ISBN
+book.author=Author
+book.publishedAt=Published at

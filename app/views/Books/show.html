@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+<table>
+   <tr><td>&{'book.name'}</td><td>${book.name}</td></tr>
+   <tr><td>&{'book.author'}</td><td>${book.author}</td></tr>
+   <tr><td>&{'book.isbn'}</td><td>${book.isbn}</td></tr>
+   <tr><td>&{'book.publishedAt'}</td><td>${book.published?.format('dd-MM-yyyy')}</td></tr>
+</table>
+#{a @Books.edit(book.id)}&{'edit'}#{/a} #{a @Books.index()}&{'cancel'}#{/a}

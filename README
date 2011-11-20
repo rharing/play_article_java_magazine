@@ -1,0 +1,7 @@
+This is the source code to accompany the playframework article in Java Magazine.
+
+After checkout, the simple book application is the master. If you would like to see a more
+sophistacted example of the playframework, do a checkout of the branch called petclinic. This will give you a 
+playframework implementation of spring's petclinic example
+
+

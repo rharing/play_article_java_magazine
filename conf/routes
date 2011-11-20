@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                   Books.index
+GET     /add                Books.add
+GET     /show/{<[0-9]+>id}  Books.show
+POST    /save/{<[0-9]+>id}  Books.save
+GET     /edit/{<[0-9]+>id}  Books.edit
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
