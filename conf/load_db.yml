@@ -214,20 +214,24 @@ Pet(pet_10):
 
 Visit(visit_1):
   pet: pet_7
+  vet: vet_5
   date: 1996-03-04
   description: rabies shot
 
 Visit(visit_2):
   pet: pet_8
+  vet: vet_5
   date: 1996-03-04
   description: rabies shot
 
 Visit(visit_3):
   pet: pet_8
+  vet: vet_6
   date: 1996-06-04
   description: neutered
 
 Visit(visit_4):
   pet: pet_7
+  vet: vet_1
   date: 1996-09-04
   description: spayed

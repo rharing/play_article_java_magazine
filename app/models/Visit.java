@@ -22,7 +22,9 @@ public class Visit extends Model {
     public String description;
 
     @ManyToOne
-    @ForeignKey(name = "pet_id")
     public Pet pet;
+
+    @ManyToOne
+    public Vet vet;
 
 }
